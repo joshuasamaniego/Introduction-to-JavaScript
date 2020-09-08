@@ -1,35 +1,45 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
-
-
+const votingAge = 18;
+if(votingAge >= 18) {
+    console.log(true);
+} else {
+    console.log(false);
+}
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
-
-
-
+let newOne = 5;
+let newTwo = 8;
+if(newOne > newTwo) {
+    console.log('This is not true');
+} else {
+    console.log('this is true');
+}
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
-
-
+let strOne = "1999";
+Number('strOne');
+console.log(strOne);
 
 //Task d: Write a function to multiply a*b 
 
-
-
+function multiply (a, b) {
+    return (a * b);
+}
+console.log(multiply(2, 3));
 
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
-
-
-
-
+function dogYears(age) {
+    return (age * 7);
+}
+console.log(dogYears(25));
 
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder 
@@ -49,7 +59,19 @@
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
-
+function dogFeeder(age, weight) {
+    if (age > 1 && weight <= 5) {
+        return (weight * .05);
+    } else if (age > 1 && weight >= 5 && weight <= 10) {
+        return (weight * .04);
+    } else if (age > 1 && weight >= 10 && weight <= 15) {
+        return (weight * .03);
+    } else if (age > 1 && weight >= 15) {
+        return (weight * .02);
+    }
+    return "test";
+}
+console.log(dogFeeder(1,15));
 
 
 
