@@ -60,27 +60,51 @@ console.log(dogYears(25));
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
 function dogFeeder(age, weight) {
-    if (age > 1 && weight <= 5) {
-        return (weight * .05);
-    } else if (age > 1 && weight >= 5 && weight <= 10) {
-        return (weight * .04);
-    } else if (age > 1 && weight >= 10 && weight <= 15) {
-        return (weight * .03);
-    } else if (age > 1 && weight >= 15) {
-        return (weight * .02);
+    if (age >= 1) {
+        if (weight <= 5) {
+            return (weight * .05);
+        }
+        else if (weight >= 5 && weight <= 10) {
+            return (weight * .04);
+        }
+        else if (weight >= 10 && weight <= 15) {
+            return (weight * .03);
+        }
+        else if (weight >= 15) {
+            return (weight *.02);
+        }
+    else {
+        if (age >= 0.166667 && age <= 0.333334) {
+            return (weight * .1);
+        }
+        else if (age > 0.333334 && age <= 0.583334) {
+            return (weight * .05);
+        }
+        else if (age > 0.583334 && age < 1) {
+            return (weight * .04);
+        }
     }
-    return "test";
+    }
 }
 console.log(dogFeeder(1,15));
-
-
+// Current code does NOT work for a 'puppy'!
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
-// Your function should take a string (either rock paper or sissors)
+// Your function should take a string (either rock paper or scissors)
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
+
+function rps() {
+    for (let i = 0; i < 3; i++) {
+        let rock = 1;
+        let paper = 2;
+        let scissors = 3;
+
+    }
+}
+    
 
   
   
@@ -89,37 +113,55 @@ console.log(dogFeeder(1,15));
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
-
-
-
+function kmToMiles(km) {
+    return (km * 0.621371);
+}
+console.log(kmToMiles(5));
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
 
-
-
+function feetToCm(feet) {
+    return (feet * 30.48);
+}
+console.log(feetToCm(5));
 
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-
+function annoyingSong(num) {
+    for (let i = num; i > 0; i--) {
+        console.log(i + ' bottles of soda on the wall, ' + i + ' bottles of soda, take one down, pass it around, ' + (i - 1) + ' bottles of soda on the wall!');
+    }
+}
+annoyingSong(10);
 
 
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
-//write a javaScript program that takes a mark out of 100 and returns a corisponding letter grade 
+//write a javaScript program that takes a mark out of 100 and returns a corresponding letter grade 
 //90s should be A 
 //80s should be B 
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  
 
-  
-  
+function gradeCalc(mark) {
+    if(mark <= 100 && mark >= 90) {
+        return ("A");
+    } else if (mark < 90 && mark >= 80) {
+        return ("B");
+    } else if (mark < 80 && mark >= 70) {
+        return ("C");
+    } else if (mark < 70 && mark >= 60) {
+        return ("D");
+    } else {
+        return ("F");
+    }
+}
+console.log(gradeCalc(89));
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
