@@ -96,19 +96,27 @@ console.log(dogFeeder(1,15));
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-function rps() {
-    for (let i = 0; i < 3; i++) {
-        let rock = 1;
-        let paper = 2;
-        let scissors = 3;
-
+function rps(str) {
+    let computer = Math.floor(Math.random() * 3)
+    // rock = 0, paper = 1, scissors = 2
+    if(str === 'paper' && computer === 0){
+        return('You Won');
+    } else if (str === 'paper' && computer === 2) {
+        return('You Lost');
+    } else if (str === 'scissors' && computer === 0) {
+        return('You Lost');
+    } else if (str === 'scissors' && computer === 1) {
+        return('You Won');
+    } else if (str === 'rock' && computer === 1) {
+        return('You Lost');
+    } else if (str === 'rock' && computer === 2) {
+        return('You Won');
+    } else {
+        return('You Tied');
     }
 }
+console.log(rps('paper'));
     
-
-  
-  
-
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
@@ -137,8 +145,6 @@ function annoyingSong(num) {
 }
 annoyingSong(10);
 
-
-
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
 //write a javaScript program that takes a mark out of 100 and returns a corresponding letter grade 
@@ -161,7 +167,7 @@ function gradeCalc(mark) {
         return ("F");
     }
 }
-console.log(gradeCalc(89));
+console.log(gradeCalc(95));
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
