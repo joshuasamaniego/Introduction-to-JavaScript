@@ -72,8 +72,8 @@ function dogFeeder(age, weight) {
         }
         else if (weight >= 15) {
             return (weight *.02);
-        }
-    else {
+        } 
+    } else {
         if (age >= 0.166667 && age <= 0.333334) {
             return (weight * .1);
         }
@@ -84,10 +84,10 @@ function dogFeeder(age, weight) {
             return (weight * .04);
         }
     }
-    }
 }
+
 console.log(dogFeeder(1,15));
-// Current code does NOT work for a 'puppy'!
+// Current code does NOT work for a 'puppy'! - fixed it!
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
